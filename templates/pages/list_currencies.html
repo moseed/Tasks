@@ -1,0 +1,20 @@
+{% extends 'refrence.html' %}
+{% block content %}
+<body>
+<ul>
+  {% for curr in currencies %}
+  <div class="card my-2">
+    <div class="card-body">
+      <div calss ="card-title">{{  curr.cur_id  }} {{  curr.cur_name }}  {{ curr.cur_sign.sign}}</div>  
+      {% for tag in currencies.cur_tag.all %}
+        <div class="card-text">   {{ tag.desc}}     </div>
+      {% endfor %}            
+      <a href="{% url 'show_currency' curr.cur_id %}" class="btn btn-primary btn-sm">View</a>
+      <a href="{% url 'update_currency' curr.cur_id %}" class="btn btn-info btn-sm">Edit</a>  
+    </div>
+  </div>
+  {% endfor %}
+</ul>
+</body>
+{% endblock content %}
+

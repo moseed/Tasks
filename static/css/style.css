@@ -1,0 +1,81 @@
+@font-face {
+    font-family: cairoFont;
+    src: url(Fonts/Cairo-VariableFont_slnt\,wght.ttf);
+
+
+}
+form {
+    text-align: center;
+}
+body{
+    background-image: url(Pic/BACK.jpg);
+    background-size:cover;
+   
+}   
+h1{
+    text-align: center;
+    font-family: JannaLt;
+    color: rgb(51, 51, 51);
+
+    font-size: 50px;
+
+}
+label{
+    font-family: JannaLt;
+    color: rgb(8, 8, 13);
+    font-size: 20px;
+
+}
+
+i{
+    color: rgb(53, 53, 67);
+    font-size: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    font-family: JannaLt;
+    color: rgb(8, 8, 13);
+    font-size: 20px;
+    border-color: rgb(193, 193, 193);
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+input[type="submit"] {
+    font-family: JannaLt;
+    color: rgb(8, 8, 13);
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #b5b5b5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #676767; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); 
+    transform: translateY(-2px);
+  }
+  
+  input[type="submit"]:active {
+    background-color: #464646; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); 
+    transform: translateY(2px); 
+  }
+
+@font-face {
+    font-family: JannaLT;
+    src: url(Fonts/JannaLT-Regular.ttf);
+}
+
+footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: goldenrod;
+color: black;
+text-align: center;
+}

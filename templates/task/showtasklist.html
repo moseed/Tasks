@@ -1,0 +1,16 @@
+{% extends 'refrence.html' %}
+{% block content %}
+<body>
+  <input id="search" type="text" name="input" placeholder="Search..">
+  <button onclick="search_field()">Search</button>
+  <h1>
+       {{  task.taskdesc  }}
+  </h1>
+  <h2>
+       {{  task.tasktype.typename}}
+  </h2>
+  <h3>
+        {{ task.taskdesc}}
+  </h3>
+</body>
+{% endblock content %}

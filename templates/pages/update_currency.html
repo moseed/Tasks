@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+  <input id="search" type="text" name="input" placeholder="Search..">
+  <button onclick="search_field()">Search</button>
+  <div class="card my-2">
+    <div class="card-body">
+      <div calss ="card-title">{{  currencies.cur_id  }} {{  currencies.cur_name }}  {{ currencies.cur_sign}}</div>             
+    </div>
+  </div>
+</body>
+{% endblock content %}
+
