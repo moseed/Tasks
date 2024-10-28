@@ -56,8 +56,8 @@ class Tasks(models.Model):
     upd_date = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(
         AUTH_USER_MODEL, 
-        on_delete=models.CASCADE
-        )
+        on_delete=models.CASCADE,
+        null=True)
     status = models.IntegerField(
         choices=TaskStatus.choices,
         default=TaskStatus.PENDING
