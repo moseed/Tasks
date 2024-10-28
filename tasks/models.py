@@ -1,8 +1,14 @@
 from django.db import models
 from django import forms
 from django.utils import timezone
+from django.conf.global_settings import AUTH_USER_MODEL
 
 # Create your models here.
+
+class TaskStatus(models.Model):
+    PENDING= 1, 'Pending',
+    CONFIRMED = 2, 'Confirmed'
+    CANCELED = 3, 'Canceled'
 
 class TaskType(models.Model):
     typename = models.CharField(null=True)
@@ -44,7 +50,12 @@ class Tasks(models.Model):
     amount = models.DecimalField(max_digits=6,decimal_places=2,null=True)
     notes = models.TextField(null=True)
     cr_date = models.DateTimeField(auto_now_add=True)
-    #username = models.ForeignKey(auth_user)
+    cr_date = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(AUTO_USER_MODEL, on_delete=models.CASCADE)
+    status = models.IntegerField(
+        choices=TaskStatus.choices,
+        default=TaskStatus.PENDING)
+
 
 
 
