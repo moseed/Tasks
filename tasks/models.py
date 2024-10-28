@@ -5,7 +5,7 @@ from django.conf.global_settings import AUTH_USER_MODEL
 
 # Create your models here.
 
-class TaskStatus(models.Model):
+class TaskStatus(models.IntegerChoices):
     PENDING= 1, 'Pending',
     CONFIRMED = 2, 'Confirmed'
     CANCELED = 3, 'Canceled'
@@ -14,6 +14,7 @@ class TaskType(models.Model):
     typename = models.CharField(null=True)
     typestatus = models.BooleanField(null=True)
     cr_date = models.DateTimeField(auto_now_add=True)
+    upd_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.typename
@@ -23,6 +24,7 @@ class TaskJob(models.Model):
     jobname = models.CharField(null=True)
     jobstatus = models.BooleanField(null=True)
     cr_date = models.DateTimeField(auto_now_add=True)
+    upd_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.jobname
@@ -33,6 +35,7 @@ class Company(models.Model):
     comp_name = models.CharField(null=False)
     comp_name_e = models.CharField(null=True)
     cr_date = models.DateTimeField(auto_now_add=True)
+    upd_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.comp_name 
@@ -50,11 +53,15 @@ class Tasks(models.Model):
     amount = models.DecimalField(max_digits=6,decimal_places=2,null=True)
     notes = models.TextField(null=True)
     cr_date = models.DateTimeField(auto_now_add=True)
-    cr_date = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(AUTO_USER_MODEL, on_delete=models.CASCADE)
+    upd_date = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(
+        AUTH_USER_MODEL, 
+        on_delete=models.CASCADE
+        )
     status = models.IntegerField(
         choices=TaskStatus.choices,
-        default=TaskStatus.PENDING)
+        default=TaskStatus.PENDING
+        )
 
 
 
