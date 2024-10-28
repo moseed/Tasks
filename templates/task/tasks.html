@@ -7,7 +7,7 @@
     <div class="card my-2">
       <div class="card-body">
         <div calss ="card-title">{{ task.taskdesc }},{{ task.tasktype.typename }},{{ task.taskjob.jobname}}</div>        
-          <div class="card-text"> {{ task.notes }}    </div>
+
             <a href="{% url 'showtasks' task.id %}" class="btn btn-primary btn-sm">View</a>
             <a href="{% url 'task_update' task.id %}" class="btn btn-info btn-sm">Edit</a>  
       </div>
